@@ -22,7 +22,8 @@ const index = async() => {
   const sendETHSelector = "button[class='w-full btn mt-4 sm:mt-0 sm:w-auto sm:ml-4  rounded-lg text-white bg-[#5442A7] py-3 px-4 text-center font-bold']";
   await page.waitForSelector(sendETHSelector);
   await page.click(sendETHSelector); 
-  // await browser.close(); 
+
+  await browser.close(); 
 };
 
 index();

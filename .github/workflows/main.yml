@@ -1,1 +1,20 @@
+name: main
+on:
+  schedule:
+    - cron: "10 0 * * *"
+  workflow_dispatch:
 
+jobs:
+  build:
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Test Run 
+        run: echo "Hello, World!"
+      
+      - name: Run NodeJS Puppeteer
+        run: node index.js  

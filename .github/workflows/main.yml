@@ -15,6 +15,9 @@ jobs:
 
       - name: Test Run 
         run: echo "Hello, World!"
+
+      - name: Install ts-node 
+        run: npm install ts-node  
       
       - name: Run NodeJS Puppeteer
-        run: node index.js  
+        run: ts-node index.ts 
